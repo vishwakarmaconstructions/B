@@ -271,9 +271,15 @@ const About: React.FC = () => {
               {[
                 { icon: Phone, title: 'Call Us', content: '+91 99971 73549', sub: '+91 80065 12858', color: 'text-amber-500', href: 'tel:+919997173549' },
                 { icon: Mail, title: 'Email Us', content: 'vishwakarmaconstructions2023@gmail.com', sub: 'Official Inquiry Channel', color: 'text-amber-500', href: 'mailto:vishwakarmaconstructions2023@gmail.com' },
-                { icon: MapPin, title: 'Visit Us', content: 'Murad Nagar, Ghaziabad', sub: 'Near Jalalpur Primary School, Asalatnagar Road, UP 201206', color: 'text-amber-500', href: '#footer-contact' },
+                { icon: MapPin, title: 'Visit Us', content: 'Muradnagar, Ghaziabad', sub: 'T-Point, Asalat-Jalalpur, Near Primary School, UP 201206', color: 'text-amber-500', href: 'https://share.google/v9vALRLmxbSHRD9mp' },
               ].map((item, i) => (
-                <a key={i} href={item.href} className="block">
+                <a
+                  key={i}
+                  href={item.href}
+                  target={item.href.startsWith('http') ? '_blank' : undefined}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="block"
+                >
                   <Card className="bg-zinc-900/85 border-white/10 hover:border-amber-500/40 hover:bg-zinc-900 transition-colors group rounded-3xl overflow-hidden">
                     <CardContent className="p-6 flex items-center gap-6">
                       <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">

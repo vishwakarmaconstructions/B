@@ -371,7 +371,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     <div className="p-2 rounded-full bg-amber-500/10 border border-amber-500/20 mt-1">
                       <MapPin className="h-4 w-4 text-amber-500 shrink-0" />
                     </div>
-                    <span className="font-medium">Near Jalalpur primary school, Asalatnagar road, Murad Nagar, Ghaziabad, UP 201206</span>
+                    <a
+                      href="https://share.google/v9vALRLmxbSHRD9mp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium hover:text-amber-400 transition-colors"
+                    >
+                      T-Point, Asalat-Jalalpur, Near Primary School, Muradnagar, Ghaziabad, UP 201206
+                    </a>
                   </li>
                 </ul>
               </div>

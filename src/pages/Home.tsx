@@ -324,10 +324,11 @@ const Home: React.FC = () => {
             <Badge className="bg-amber-500/10 text-amber-500 border-amber-500/20 mb-4 md:mb-6 uppercase tracking-widest text-[10px] md:text-xs">Our Presence</Badge>
             <h2 className="text-3xl md:text-6xl font-black text-white mb-6 md:mb-8 tracking-tighter uppercase">Serving the Heart of India</h2>
             <p className="text-slate-400 text-base md:text-lg mb-8 md:mb-10 leading-relaxed">
-              Based in Delhi, we serve the entire National Capital Region (NCR). Our local expertise ensures we understand the unique architectural and regulatory landscape of the city.
+              Headquartered in Muradnagar, Ghaziabad, we serve the entire National Capital Region (NCR). Our local expertise ensures we understand the unique architectural and regulatory landscape of the region.
             </p>
             <div className="space-y-4 md:space-y-6">
               {[
+                { city: 'Muradnagar, Ghaziabad (HQ)', desc: 'T-Point, Asalat-Jalalpur, Near Primary School, UP 201206', href: 'https://share.google/v9vALRLmxbSHRD9mp' },
                 { city: 'Delhi', desc: 'South, North, West & East Delhi' },
                 { city: 'Gurgaon', desc: 'Premium Residential & Commercial' },
                 { city: 'Noida', desc: 'Industrial & Modern Housing' },
@@ -336,15 +337,32 @@ const Home: React.FC = () => {
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-amber-500/20 flex items-center justify-center shrink-0">
                     <MapPin className="text-amber-500 h-5 w-5 md:h-6 md:w-6" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <h4 className="font-bold text-white uppercase text-sm md:text-base">{loc.city}</h4>
                     <p className="text-slate-400 text-xs md:text-sm">{loc.desc}</p>
                   </div>
+                  {loc.href && (
+                    <a
+                      href={loc.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open Headquarters location in Google Maps"
+                      className="w-9 h-9 rounded-full bg-amber-500/15 border border-amber-500/35 flex items-center justify-center text-amber-400 hover:bg-amber-500 hover:text-black transition-colors shrink-0"
+                    >
+                      <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
           </div>
-          <div className="relative aspect-square rounded-[2rem] md:rounded-[4rem] overflow-hidden border border-white/10 bg-slate-900 shadow-2xl mt-8 lg:mt-0">
+          <a
+            href="https://share.google/v9vALRLmxbSHRD9mp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Headquarters — Muradnagar, Ghaziabad on Google Maps"
+            className="group block relative aspect-square rounded-[2rem] md:rounded-[4rem] overflow-hidden border border-white/10 hover:border-amber-500/40 transition-colors bg-slate-900 shadow-2xl mt-8 lg:mt-0"
+          >
             <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_50%_50%,#d97706_0%,transparent_70%)]"></div>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="relative">
@@ -355,11 +373,18 @@ const Home: React.FC = () => {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 rounded-full border border-amber-500/10"></div>
               </div>
             </div>
-            <div className="absolute bottom-8 md:bottom-12 left-8 md:left-12">
-              <div className="text-2xl md:text-4xl font-black text-white uppercase">Delhi</div>
-              <div className="text-amber-500 font-bold tracking-widest text-[10px] md:text-xs uppercase">Headquarters</div>
+            <div className="absolute bottom-8 md:bottom-12 left-8 md:left-12 right-8 md:right-12 flex items-end justify-between gap-4">
+              <div>
+                <div className="text-xl sm:text-2xl md:text-4xl font-black text-white uppercase leading-tight">Muradnagar, Ghaziabad</div>
+                <div className="text-amber-500 font-bold tracking-widest text-[10px] md:text-xs uppercase mt-1">
+                  Headquarters • View on Google Maps
+                </div>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-black transition-colors shrink-0">
+                <ArrowUpRight className="w-5 h-5" />
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </section>
 
